@@ -1,0 +1,285 @@
+<style>
+    /* CSS */
+    .button-19 {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    }
+
+    .button-19:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    }
+
+    .button-19:main,
+    .button-19:focus {
+    user-select: auto;
+    }
+
+    .button-19:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+    }
+
+    .button-19:disabled {
+    cursor: auto;
+    }
+</style>
+
+<script id="sp-threeds-js" src=" https://test.api.securepay.com.au/threeds-js/securepay-
+threeds.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+     var newOrder = JSON.parse('{"ip":"127.0.0.1","orderReference":"Your reference for this order","merchantCode":"5AR0055","orderType":"THREED_SECURE","amount":123321,"orderId":"54ae9d91-b68f-4fe2-bbd6-42e5cf03e5f7","orderToken":"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.PGHE3F_AFUqg6hrmY_xYUNYtrg04vv8-DxlMW70pzXs2plWd2u2yDEKNml1cAPOZJ-AZYbNITmpEALWajJfYak-Qhylv-VUmYVCntKrERcSZyR0izQLn-rpu8O5W5qIKnZgKErWOpEatzlRdsNstv9EkUw0mwiLEHbAKYCFJO8mi7dnCZILOGC00x1VG91_lOEWCYraFjMGzsHTJGYMpqiy7IvFKgc1Yc5SuTB19tu-pBv70HpbUPRLr7T7PXEH-pr9ARpqL8UFn5M69luBQ14q8QimsbDfkzWQHRQhtYK13fq9u4naVXjmHcohBTdWvQpSKkwp3MrUpd9haLjBKcg.HgKgySQbKmptPsh4.jx8l2BYnwNANyVjtk2F0b67i-cw3jET1XfysYJd_iX2DXcSnan-jZx6ykd3Nu2edHXWv7g6H0s1DWSMKPl6DJK9SC4Jg9wvJcudprr5v_lCq8svGO4KaKQ4fOEJ8lMo8hidV3Zao0rK8GfIDWAfPF8YBrx3R2CxYSKvlEKyVP8THS7m9pdvzDREgPzZl-wv8AMgISYDjleV9jChOHBC0nO0zkoPhSGwyNSUwBQ5qJjpHmqgEhr7_LOU20KidTuVvf8LBJYac1VV4jPaNuy0IVuOvif7MrJ0Zh38RIqeBh81MKqZxNNZIpGb-nBhS89Ae0wKgaQnc5g3Jr-tyBhP7gvkZbxWAAwog_U9x_7j6nzSCO2nJ8kWpyoR2M9Mm0AFhLijxV7EeW-1q6ZMgKdsjVLrsulebzraegsSmX1u04g_BT9kp2EveZyenGhPX0h-fFWp_gxnItj83h5B2L0o-Gmh7omooBC57eNU_RvzSqzTZUiveNIsBZ7jqu9m_1GwM_LZhzjQSNCqGrUgNisDryEBTP6Uuo85y9I2L4ZybNgL3l49-51Yo1YAWsplQp7NyBTJSpkuO1y1uh4F4eyHfCLb5nZbyHMKlsJzrsC-2NpmIxcPQeO15SaJ7h7C7oFVTfMo5evsRzrXZMAwsBOiHE2_b2df_heRYI7jPt3Vikqpk77UAcSJPlpPViRxmwE0GBTIvvEY3mQ__IuwZJSVomPHNQSwZEqjF_oFxVWgfxIBSPEHzgu8k3Bxl02X5MO8cQSJhUVLem8n2ZLoJQF2vcJUeMz2UOj2maYYUBzAJk57cVGLYFs29LQ.YbaaoOgvLWEJV9qZCxIoQw","createdAt":"2023-03-14T14:41:32.213+11:00","threedSecureDetails":{"providerClientId":"w-188553","sessionId":"OTkyZmNkNGUtYzU3MC00YjcxLWIyMmQtYjdiMGZhY2ZiYjA5","simpleToken":"nIM_L7zVkxAE992933nSshS2cdEXldKpU1OFfpFGSihjfxRg8_DoSZBugMq68QumPFmTxsg="}}');
+
+    //cardholderInfo -> co the do card sai
+    // var payload = '{"ip": "192.168.1.2", "merchantOrderReference": "merchantId1", "amount": 99, "currency": "AUD", "orderType": "PAYMENT", "intents": ["THREED_SECURE"]}';
+
+    // var _3ds2Order;
+    // var spTestURL = "https://test.api.securepay.com.au/services/order-management/v2/payments/orders";
+
+    var myInputData = JSON.parse('{ "cardTokenInfo":{ "cardholderName":"ChungSleep", "cardToken":"5118436652469571" }, "accountData":{ "emailAddress":"bsk.denimit@gmail.com"}, "billingAddress":{ "city":"Suburb", "state":"NSW", "country":"AU", "zipCode":"2000", "streetAddress":"Unit 1", "detailedStreetAddress":"123 Street Suburb", "detailedStreetAddressAdditional":"123 Street Suburb" }}');
+
+    var myInputData2 = JSON.parse('{ "cardTokenInfo":{ "cardholderName":"test", "cardToken":"8802580086925263" }, "accountData":{ "emailAddress":"bsk.denimit@gmail.com", "mobilePhone":{ "cc":"+61", "subscriber":"400000000" }, "workPhone":{ "cc":"+61", "subscriber":"400000000" }, "homePhone":{ "cc":"+61", "subscriber":"400000000" } }, "billingAddress":{ "city":"Suburb", "state":"NSW", "country":"AU", "zipCode":"2000", "streetAddress":"Unit 1", "detailedStreetAddress":"123 Street Suburb", "detailedStreetAddressAdditional":"123 Street Suburb" }, "shippingAddress":{ "city":"Suburb", "state":"NSW", "country":"AU", "zipCode":"2000", "streetAddress":"Unit 1", "detailedStreetAddress":"123 Street Suburb", "detailedStreetAddressAdditional":"123 Street Suburb" }, "merchantRiskData":{ "deliveryTimeframeType":"01", "reOrderType":"01", "shippingMethodType":"01" }, "threeDSInfo":{ "threeDSReqAuthMethodInd":"02" } }');
+    var tokenised = null;
+
+    $(document).ready(function(){
+      $("#bigClick").click(function(){
+          let promiseAuth = new Promise((resolve, myReject) => {
+            resolve(initOauthToken);
+            return promiseAuth;
+          });
+          promiseAuth.then(initOrder);
+          // console.log(promiseAuth);
+          // let spAuthResult = ;
+          // let myOrder = initOrder(spAuthResult);
+          // console.log(myOrder);
+          // console.log("onRequestInputDataCallback() ~~");
+          // console.log(onRequestInputDataCallback());
+          // myBigClick();
+        }
+
+      );
+    });
+
+    function initOauthToken(){
+      let clientSecret = document.getElementById("clientSecret").value;
+      let basicAuth = btoa("0oaxb9i8P9vQdXTsn3l5:" + clientSecret);
+      let fromUrlEncoded = $("#oauthF").serialize();
+      $.ajax({
+          url: "https://welcome.api2.sandbox.auspost.com.au/oauth/token",
+          type: "POST",
+          headers: { "Authorization": "Basic " + basicAuth},
+          data: fromUrlEncoded,
+          contentType: "application/x-www-form-urlencoded",
+          success: function (data) {
+              return data;
+          },
+          error: function(error){
+            console.log("errorWhen create oauth token");
+          }
+      });
+    }
+
+    function initOrder(spAuthResult){
+      let clientSecret = document.getElementById("clientSecret").value;
+      let basicAuth = btoa("0oaxb9i8P9vQdXTsn3l5:" + clientSecret);
+      let payload = {
+            merchantCode: "5AR0055",
+            amount: 123321,
+            ip: "127.0.0.1",
+            orderReference: "Your reference for this order",
+            orderType: "THREED_SECURE"
+      };
+      $.ajax({
+          url: "https://payments-stest.npe.auspost.zone/v2/payments/orders/initiate",
+          type: "POST",
+          headers: { "Authorization": "Bearer " + spAuthResult.access_token},
+          data: JSON.stringify(payload),
+          contentType: "application/json",
+          success: function (order) {
+              return order;
+          },
+          error: function(error){
+            console.log("errorWhen init order");
+          }
+      });
+    }
+
+    function onRequestInputDataCallback() {
+        if(tokenised != null){
+            myInputData.cardTokenInfo.cardToken = tokenise;
+        }
+
+        return myData;
+    }
+
+    function onThreeDSResultsResponseCallback(response){
+        console.log("response");
+        console.log(response);
+    }
+
+    function onThreeDSErrorCallback(errors){
+        console.log("onThreeDSErrorCallback -> errors");
+        console.log(errors);
+    }
+
+    function myBigClick() {
+        console.log("myBigClick assign success");
+        console.log(tokenised);
+        document.getElementById("tokenise").value = tokenised;
+
+        var sp3dsConfig = {
+            clientId: newOrder.threedSecureDetails.providerClientId,
+            iframe: document.getElementById("3ds-v2-challenge-iframe"),
+            token: newOrder.orderToken,
+            simpleToken: newOrder.threedSecureDetails.simpleToken,
+            threeDSSessionId: newOrder.threedSecureDetails.sessionId,
+            onRequestInputData: get3DS2DataRequest,
+            onThreeDSResultsResponse: onThreeDSResultsResponseCallback,
+            onThreeDSError: onThreeDSErrorCallback
+        };
+        console.log("sp3dsConfig created");
+        console.log(sp3dsConfig);
+
+        /*
+            Please note:
+        If any of the config objects are missing, error “VALIDATION_ERROR - missing mandatory config” will be received.
+        If the clientId provided is incorrect, error “INITIALIZATION_ERROR - JavaScript initialization error” will be received.
+        If invalid type of iframe is used, then “WRONG_CONFIG_TYPE_ERROR - config is not in expected format” will be received.
+        */
+
+        var securePayThreedsUI = new window.SecurePayThreedsUI();
+        console.log("securePayThreedsUI");
+        console.log(securePayThreedsUI);
+        window.securePayThreedsUI = securePayThreedsUI;
+        securePayThreedsUI.initAndStartThreeDS(sp3dsConfig);
+        console.log("AFTER initAndStartThreeDS");
+        console.log(securePayThreedsUI);
+    }
+
+</script>
+
+<body>
+<span style="color:#db128b">
+    <p>MY SP INPUT</p>
+    <input type = "text" id = "tokenise" />
+    Client Secret <input type = "text" id = "clientSecret" value = "0aBsGU3x1bc-UIF_vDBA2JzjpCPHjoCP7oI6jisp"/>
+</span>
+    <form onsubmit="return false;" style="visibility: hidden;" id = "oauthF">
+      <input id = "grant_type" name = "grant_type" value = "client_credentials"/>
+      <input id = "audience" name = "audience" value = "https://api.payments.auspost.com.au"/>
+    </form>
+
+    <form onsubmit="return false;">
+      <div id="securepay-ui-container"></div>
+      <button onclick="mySecurePayUI.tokenise();">Submit</button>
+      <button onclick="mySecurePayUI.reset();">Reset</button>
+    </form>
+    <script id="securepay-ui-js" src="https://payments-stest.npe.auspost.zone/v3/ui/client/securepay-ui.min.js"></script>
+    <script type="text/javascript">
+      var mySecurePayUI = new securePayUI.init({
+        containerId: 'securepay-ui-container',
+        scriptId: 'securepay-ui-js',
+        // clientId: 'ABC00',
+        // merchantCode: 'abc123',
+        clientId: '0oaxb9i8P9vQdXTsn3l5',
+        merchantCode: '5AR0055',
+        card: {
+            allowedCardTypes: ['visa', 'mastercard', 'diners', 'amex'],
+            showCardIcons: true,
+            onCardTypeChange: function(cardType) {
+              // card type has changed
+            },
+            onBINChange: function(cardBIN) {
+              // card BIN has changed
+            },
+            onFormValidityChange: function(valid) {
+              // form validity has changed
+            },
+            onTokeniseSuccess: function(tokenisedCard) {
+              // card was successfully tokenised or saved card was successfully retrieved
+              console.log("MY --> tokenised:");
+              tokenised = tokenisedCard;
+              console.log(tokenised);
+            },
+            onTokeniseError: function(errors) {
+              // tokenization failed
+            }
+        },
+        style: {
+          backgroundColor: 'rgba(135, 206, 250, 0.1)',
+          label: {
+            font: {
+                family: 'Arial, Helvetica, sans-serif',
+                size: '1.4rem',
+                color: '#db128b'
+            }
+          },
+          input: {
+           font: {
+               family: 'Arial, Helvetica, sans-serif',
+               size: '1.3rem',
+               color: '#ed1aae'
+           }
+         }
+        },
+        onLoadComplete: function () {
+          // the UI Component has successfully loaded and is ready to be interacted with
+        }
+      });
+    </script>
+    <span id="cardType"></span>
+    <span id="cardBin"></span>
+    <span id="valid"></span>
+    <span id="cardType"></span>
+    <hr>
+
+
+<h2>TEST 3ds2</h2>
+<!-- HTML !-->
+<button class="button-19" role="button" id="bigClick" onclick="initOauthToken()"> BIG CLICK </button>
+
+<!-- <iframe id="3ds-v2-challenge-iframe" name="3ds-v2-challenge-iframe" style="width: 500px; height: 500px; visibility:hidden;"> -->
+<!-- </iframe> -->
+
+<iframe id="3ds-v2-challenge-iframe" name="3ds-v2-challenge-iframe" style="width: 500px;
+height: 500px; border: 3px solid pink">
+</iframe>
+</body>
